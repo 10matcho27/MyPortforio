@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier -write ."
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.6",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4"
+    "eslint-config-next": "12.2.4",
+    "prettier": "^2.7.1"
   }
 }

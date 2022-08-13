@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Script from 'next/script'
 import { 
   Avatar, 
   AvatarBadge, 
@@ -28,6 +29,8 @@ import {
   MenuDivider,
   IconButton,
  } from '@chakra-ui/react'
+
+import {motion} from 'framer-motion'
 
  import { 
   AddIcon,
@@ -59,6 +62,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      
       <Head>
         <title>Matcho portfolio</title>
         <meta name="description" content="Matcho Portfolio" />
@@ -88,9 +92,26 @@ export default function Home() {
       </Menu>
       
       <main className={styles.main}>
-        
+        <Center>
+        <motion.div initial="hidden" animate="visible" variants={
+          {
+            hidden: {
+              opacity: 0,
+              scale: 0.8,
+            },
+            visible: {
+              scale: [1, 1.1, 1],
+              opacity: 1,
+              transition: {
+                delay: 1.5, //ページロード時に表示されるまでの遅延
+              }
+            }
+          }
+        } whileHover={
+          {rotate:[0, 5, -5, 0]}
+        }>
         <Flex>
-          <Box width="100%" maxWidth="1200px" mx="auto" onClick={onToggle}>
+          <Box width="100%" maxWidth="200px" mx="auto" onClick={onToggle}>
           <Avatar 
             name="Matcho" 
             src='/images/Matcho.jpg'
@@ -100,6 +121,13 @@ export default function Home() {
           </Box>
         </Flex>
         <ScaleFade initialScale={0.9} in={isOpen}>
+        <motion.div whileHover={
+          {
+            scale: 1.2,
+            transition: {
+              duration: 0.2,
+            }
+          }}>  
         <Box 
           p='200px'
           color='white'
@@ -110,7 +138,10 @@ export default function Home() {
         >
           Fade
         </Box>
+        </motion.div>
       </ScaleFade>
+      </motion.div>
+      </Center>
       </main>
 
       
@@ -127,6 +158,9 @@ export default function Home() {
           </span>
         </a>
       </footer>
+      {/* scrollReveal().reveal({styles.container}); */}
     </div>
+    // https://www.youtube.com/watch?v=UIX0DSaNOjI
+    // https://www.youtube.com/watch?v=VYiMU_xB9LY
   )
 }
