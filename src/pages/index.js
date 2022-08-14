@@ -64,7 +64,7 @@ export default function Home() {
     <div className={styles.container}>
       
       <Head>
-        <title>Matcho portfolio</title>
+        <title>Matcho&apos;s portfolio</title>
         <meta name="description" content="Matcho Portfolio" />
         <link rel="icon" href="/icon.png" />
       </Head>
