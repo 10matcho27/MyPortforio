@@ -13,6 +13,7 @@ import {
   SimpleGrid,
   Box,
   Center,
+  Container,
   Text,
   Fade, 
   ScaleFade, 
@@ -32,7 +33,7 @@ import {
 
 import {motion} from 'framer-motion'
 
- import { 
+import { 
   AddIcon,
   HamburgerIcon,
   ExternalLinkIcon,
@@ -59,89 +60,70 @@ export default function Home() {
     fontWeight: 'bold',
     fontSize: '20px',
   }
+  
 
   return (
     <div className={styles.container}>
       
       <Head>
         <title>Matcho&apos;s portfolio</title>
-        <meta name="description" content="Matcho Portfolio" />
+        <meta name="description" content="Matcho&apos; Portfolio" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          aria-label='Options'
-          icon={<HamburgerIcon />}
-          variant='outline'
-        />
-        <MenuList>
-        <MenuItem icon={<AddIcon />} command='a'>
-          New Tab
-        </MenuItem>
-        <MenuItem icon={<ExternalLinkIcon />} command='i'>
-          New Window
-        </MenuItem>
-        <MenuItem icon={<RepeatIcon />} command='u'>
-          Open Closed Tab
-        </MenuItem>
-        <MenuItem icon={<EditIcon />} command='e'>
-         Open File...
-        </MenuItem>
-        </MenuList>
-      </Menu>
       
       <main className={styles.main}>
-        <Center>
-        <motion.div initial="hidden" animate="visible" variants={
-          {
-            hidden: {
-              opacity: 0,
-              scale: 0.8,
-            },
-            visible: {
-              scale: [1, 1.1, 1],
-              opacity: 1,
-              transition: {
-                delay: 1.5, //ページロード時に表示されるまでの遅延
+        <Container>
+          <Center h='100%'>
+            <motion.div initial="hidden" animate="visible" variants={
+              {
+                hidden: {
+                  opacity: 0,
+                  scale: 0.8,
+                },
+                visible: {
+                  scale: [1, 1.1, 1],
+                  opacity: 1,
+                  transition: {
+                    delay: 0.3, //ページロード時に表示されるまでの遅延
+                  }
+                }
               }
-            }
-          }
-        } whileHover={
-          {rotate:[0, 5, -5, 0]}
-        }>
-        <Flex>
-          <Box width="100%" maxWidth="200px" mx="auto" onClick={onToggle}>
-          <Avatar 
-            name="Matcho" 
-            src='/images/Matcho.jpg'
-            size="xl"
-            shadow="2xl" />
-            <Text fontSize='3xl'>Matcho</Text>
-          </Box>
-        </Flex>
-        <ScaleFade initialScale={0.9} in={isOpen}>
-        <motion.div whileHover={
-          {
-            scale: 1.2,
-            transition: {
-              duration: 0.2,
-            }
-          }}>  
-        <Box 
-          p='200px'
-          color='white'
-          mt='4'
-          bg='gray.800'
-          rounded='md'
-          shadow='xl'
-        >
-          Fade
-        </Box>
-        </motion.div>
-      </ScaleFade>
-      </motion.div>
-      </Center>
+              } whileHover={
+                {rotate:[0, 3, -3, 0]}
+              }>
+              <Flex>
+                <Box maxWidth="200px" mx="auto" onClick={onToggle}>
+                <Avatar 
+                  name="Matcho" 
+                  src='/images/Matcho.jpg'
+                  size="xl"
+                  shadow="2xl" />
+                  <Text fontSize='3xl'>Matcho</Text>
+                </Box>
+              </Flex>
+              <ScaleFade initialScale={0.9} in={isOpen}>
+                <motion.div whileHover={
+                  {
+                    scale: 1.1,
+                    transition: {
+                      duration: 0.2,
+                    }
+                  }}>  
+                <Box 
+                  p='150px'
+                  color='white'
+                  mt='4'
+                  bg='purple.300'
+                  rounded='md'
+                  shadow='xl'
+                >
+                description
+                </Box>
+                </motion.div>
+              </ScaleFade>
+            </motion.div>
+          </Center>
+        </Container>
       </main>
 
       
