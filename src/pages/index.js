@@ -65,7 +65,7 @@ export default function Home() {
       
       <Head>
         <title>Matcho&apos;s portfolio</title>
-        <meta name="description" content="Matcho Portfolio" />
+        <meta name="description" content="Matcho&apos; Portfolio" />
         <link rel="icon" href="/icon.png" />
       </Head>
       <Menu>
