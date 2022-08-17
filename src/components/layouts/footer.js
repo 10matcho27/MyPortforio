@@ -1,8 +1,8 @@
-import { Box, Heading, Flex, Text, Button, Image, Center, Stack, Divider, } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text, Button, Image, Center, Stack, Divider, Container } from "@chakra-ui/react";
 
 export default function Footer() {
     return (
-        <footer>
+        <Container bgColor="purple.100" shadow="lg">
             <Divider />
             <Stack
                 pt="4"
@@ -29,6 +29,6 @@ export default function Footer() {
                 </Flex>
             </Center>
             </Stack>
-        </footer>
+        </Container>
     )
 }
