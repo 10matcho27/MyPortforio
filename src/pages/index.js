@@ -84,7 +84,7 @@ export default function Home() {
                   scale: [1, 1.1, 1],
                   opacity: 1,
                   transition: {
-                    delay: 0.3, //ページロード時に表示されるまでの遅延
+                    delay: 0.8, //ページロード時に表示されるまでの遅延
                   }
                 }
               }
