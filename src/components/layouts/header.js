@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/react";
 import { 
     AddIcon,
@@ -12,12 +11,18 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-
     IconButton,
+    useColorMode,
+    useColorModeValue,
 } from '@chakra-ui/react'
-  
+
+import { StyleColorMode } from "/src/lib/colorMode.js"
 
 export default function Header() {
+    const { toggleColorMode } = useColorMode()
+  
+    const bg = useColorModeValue('red.500', 'red.200')
+    const color = useColorModeValue('white', 'gray.800')
 
     return (
         <Flex
@@ -60,7 +65,6 @@ export default function Header() {
                 </MenuItem>
                 </MenuList>
             </Menu>
-            
         </Flex>
     );
 }
