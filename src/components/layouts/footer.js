@@ -2,7 +2,7 @@ import { Box, Heading, Flex, Text, Button, Image, Center, Stack, Divider, Contai
 
 export default function Footer() {
     return (
-        <Container bgColor="purple.100" shadow="lg">
+        <Container>
             <Divider />
             <Stack
                 pt="4"

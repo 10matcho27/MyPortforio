@@ -1,10 +1,17 @@
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/react";
+import React from 'react'
+import Link from 'next/link';
 import { 
     AddIcon,
     HamburgerIcon,
     ExternalLinkIcon,
     RepeatIcon,
-    EditIcon 
+    EditIcon ,
+    MoonIcon,
+    SunIcon,
+    Tooltip,
+    Cus,
+    Tag
 } from '@chakra-ui/icons'
 import {
     Menu,
@@ -16,11 +23,10 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react'
 
-import { StyleColorMode } from "/src/lib/colorMode.js"
+import OpenDrawer from "../../lib/drawer";
 
 export default function Header() {
-    const { toggleColorMode } = useColorMode()
-  
+    const { colorMode, toggleColorMode } = useColorMode()
     const bg = useColorModeValue('red.500', 'red.200')
     const color = useColorModeValue('white', 'gray.800')
 
@@ -33,38 +39,26 @@ export default function Header() {
             padding="1.5rem"
             color="black"
         >
-            <Box>
-                <Text
-                    bgGradient='linear(to-l, #7928CA, #FF0080)'
-                    bgClip='text'
-                    fontSize='20px'
-                    fontWeight='extrabold'
-                    >
-                    Matcho
-                    </Text>
-            </Box>
-            <Menu shadow="lg">
-                <MenuButton
-                as={IconButton}
-                aria-label='Options'
-                icon={<HamburgerIcon />}
-                variant='outline'
-                />
-                <MenuList>
-                <MenuItem icon={<AddIcon />} command='a'>
-                New Tab
-                </MenuItem>
-                <MenuItem icon={<ExternalLinkIcon />} command='i'>
-                New Window
-                </MenuItem>
-                <MenuItem icon={<RepeatIcon />} command='u'>
-                Open Closed Tab
-                </MenuItem>
-                <MenuItem icon={<EditIcon />} command='e'>
-                Open File...
-                </MenuItem>
-                </MenuList>
-            </Menu>
+            <Link href="/">
+                {/* <Tooltip label='Go back to home'> */}
+                    <Button
+                        bgClip='text'
+                        bgGradient='linear(to-l, #7928CA, #FF0080)'
+                        _hover={{
+                            bgGradient: 'linear(to-r, red.500, yellow.500)',
+                        }}
+                        
+                        fontSize='20px'
+                        fontWeight='extrabold'
+                        variant='ghost'
+                        >
+                        Matcho&apos;s Portfolio
+                    </Button>
+                {/* </Tooltip> */}
+            </Link>
+            
+            <OpenDrawer/>
         </Flex>
+        
     );
 }
