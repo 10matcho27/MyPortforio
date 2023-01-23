@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Script from 'next/script'
 import { 
   Avatar, 
   AvatarBadge, 
@@ -29,6 +27,7 @@ import {
   MenuOptionGroup,
   MenuDivider,
   IconButton,
+  Button,
  } from '@chakra-ui/react'
 
 import {motion} from 'framer-motion'
@@ -70,7 +69,7 @@ export default function Home() {
         <meta name="description" content="Matcho&apos; Portfolio" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      
+
       <main className={styles.main}>
         <Container>
           <Center h='100%'>

@@ -7,7 +7,6 @@ const Layout = ({ children, router }) => {
 
   return (
     <>
-      <Box as="main" pb={8} bgColor="purple.50">
       <Header />
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -16,7 +15,6 @@ const Layout = ({ children, router }) => {
         <Container maxW="container.md" pt={14} >
             {children}
         </Container>
-      </Box>
       <Footer />
     </>  
   )
