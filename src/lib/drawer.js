@@ -80,6 +80,13 @@ function OpenDrawer() {
                                 fontSize='20px'>
                                 Drawings
                             </MenuItem>
+                            <Link href={'/works'}>
+                            <MenuItem 
+                                icon={<PenTool />} 
+                                fontSize='20px'>
+                                    Works
+                            </MenuItem>
+                            </Link>
                             <MenuItem 
                                 icon={<User />} 
                                 fontSize='20px'>
